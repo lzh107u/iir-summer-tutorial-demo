@@ -1,0 +1,11 @@
+To start a django project:
+
+	python3 manage.py runserver
+
+or:
+
+	python3 manage.py runserver 0.0.0.0:<port_num>
+
+Default port number: 8000
+
+When back-end is running, user can visit "http://127.0.0.1:8000" to check development progress.

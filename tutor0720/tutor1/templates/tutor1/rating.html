@@ -1,0 +1,20 @@
+
+<!-- every variable should be sent by a dict -->
+<!-- need to be wrapped by double bracelet => {{ var }} -->
+{% block content %}
+<h1>{{ title }}</h1>
+<p>Result count: {{ count }}</p>
+<p>UserID - Movie name - Rating</p>
+
+<ul>
+    {% for x in object_list %}
+        {% if x.movie %}
+            <li>{{ x.userID.userID }} - {{ x.movie.name }} - {{ x.rating }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock content %}
+
+<a href="/tutor1/analysis/movies/">
+    <button>Back To Poster Page</button>
+</a>

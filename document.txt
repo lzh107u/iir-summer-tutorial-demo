@@ -1,0 +1,50 @@
+Something I should know about Django development:
+
+1. Check the version of Django ( immediately after downloading ):
+
+        import django
+        print( django.get_version() )
+
+    => It should print the version out as below:
+
+        4.0.6
+
+2. Start a new project:
+
+        python3 manage.py runserver 0.0.0.0:8088
+
+        ( general form: python3 manage.py runserver 0.0.0.0:<port_num> )
+
+    => It should start a new page on http://127.0.0.1:8088
+    => The port_num is not fixed.
+
+3. Add a new application to project:
+
+        python3 manage.py startapp app_example
+
+        ( general form: python3 manage.py startapp <app_name> )
+
+    => A new sub-directory should be added automatically named <app_name>, and it should contain all the following data:
+        => admin.py
+        => apps.py
+        => models.py
+        => tests.py
+        => views.py
+
+    => You should manually add a some new content in settings.py:
+        => There should be a list named INSTALLED_APPS.
+        => Add '<app_name>.apps.<ConfigClassName>'
+
+4. Using sqlite database:
+
+    => create your database model in <proj>/<app>/models.py
+
+    => make migration:
+
+        python3 manage.py makemigration
+
+        => Attention: Do not use the following command:
+
+            python3 manage.py makemigration <app>
+
+        It will result in an error.    

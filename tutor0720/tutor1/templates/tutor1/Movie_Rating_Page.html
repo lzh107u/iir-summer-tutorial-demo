@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Album example · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+
+    
+
+    
+
+<link href="{% static 'Album_example_Bootstrap_v5_2_files/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="{% static 'Headers_Bootstrap_v5_2_files/iir_icon.svg' %}" sizes="16x16" type="image/svg">
+<link rel="manifest" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">There is nothing left to say or explain.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">No Twitter</a></li>
+            <li><a href="#" class="text-white">No Facebook</a></li>
+            <li><a href="#" class="text-white">Don't email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="/tutor1/analysis" class="navbar-brand d-flex align-items-center">
+        <!-- ordinary directory manipulation is allowed -->
+        <!-- the 'static' route is set to a pseudo directory liked: /<proj>/static/<app>/... -->
+        <!-- so if we move upward 2 levels, we get to the root layer /<proj> -->
+        <!-- then we just add app name and some sub-dir upder the app. -->
+        <!-- by doing that, we can reach home page again. -->
+        <strong>Home Page</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Database Demonstration</h1>
+        <p class="lead text-muted">There are six movies below directed by Nolan that can be rated. 
+          Click the button 'View trailer' to see the movie trailer of each movie on youtube.
+          You can also see ratings from different user by clicking the button 'Rating'.</p>
+        <p>
+          <a href="/tutor1/analysis" class="btn btn-primary my-2">Back to Homepage</a>
+          <a href="https://www.youtube.com/" class="btn btn-secondary my-2">Go to Youtube</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <!-- Inception part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_Inception.jpg' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+            <div class="card-body">
+              <p class="card-text">A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=YoHD9XEInc0" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/inception" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/inception" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Inception part ends -->
+
+        <!-- The Dark Knight part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_TheDarkKnight.jpg' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+            <div class="card-body">
+              <p class="card-text">When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/thedarkknight" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/thedarkknight" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- The Dark Knight part ends -->
+
+        <!-- Interstellar part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_Interstellar.jpg' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+            <div class="card-body">
+              <p class="card-text">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=Lm8p5rlrSkY" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/interstellar" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/interstellar" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Interstellar part ends -->
+
+        <!-- Dunkirk part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_Dunkirk.jpeg' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+            <div class="card-body">
+              <p class="card-text">In May 1940, soldiers and civilians struggle by land, sea and air to evacuate the British army and their allies, Europe's last hope, from Dunkirk.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=F-eMt3SrfFU" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/dunkirk" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/dunkirk" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dunkirk part ends -->
+
+        <!-- Tenet part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_Tenet.jpg' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+
+            <div class="card-body">
+              <p class="card-text">Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=AZGcmvrTX9M" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/tenet" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/tenet" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tenet part ends -->
+
+        <!-- Oppenheimer part starts -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <img
+                        src="{% static 'Album_example_Bootstrap_v5_2_files/poster_Oppenheimer.png' %}"
+                        alt="iir_icon.svg failed to be load"/>
+            </svg>
+
+            <div class="card-body">
+              <p class="card-text">The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.youtube.com/watch?v=ZBRSsfYB2cA" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View Trailer</button>
+                  </a>
+                  <a href="/tutor1/analysis/query/oppenheimer" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">See Rating</button>
+                  </a>
+                  <a href="/tutor1/analysis/clean/oppenheimer" >
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Clean Up</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- the end of albums columns -->
+      
+      </div> <!-- the end of albums layout set -->
+    
+    </div> <!-- the end of ( album part ) container -->
+  
+  </div> <!-- the end of division for albums -->
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-1">Ok, thanks Twitter Bootstrap Team!</p>
+    <p class="mb-0">New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+
+
+    <script src="Album_example_Bootstrap_v5_2_files/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body></html>

@@ -1,0 +1,41 @@
+Some knowledge you should know before you start to develope the html, css and javascript:
+( Make sure you follow every step mentioned below )
+
+1. Simply put everything in "template" folder won't work.
+
+    => Due to the mechanism of Django, simply use the following command:
+
+        < link href="sample.css" rel="stylesheet" type="text/css" > 
+    
+    will result in the following error:
+
+        mime type mismatch
+
+2. Modify settings.py ( in project folder, not app folders ).
+
+    => according to following ref:
+
+        https://stackoverflow.com/questions/35557129/css-not-loading-wrong-mime-type-django
+
+    do what the first answer mentioned in settings.py
+
+3. Leave only index.html in "app/template/app/", the rest files should be put in a new folder named "app/static/app/"
+
+    => ref: https://stackoverflow.com/questions/9145994/a-simple-example-of-django-and-css
+    => ref: https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+    => just follow everything mentioned in these two website.
+    => ATTENTION:
+        When you are modifying the STATICFILES_DIRS, you should use your directory of app static folder instead of the example on website.
+        That won't work.
+
+4. STATIC error:
+
+    => There's a chance of the error "'staticfiles' is not a registered tag library." occured if you follow the above step.
+    => ref: https://stackoverflow.com/questions/55929472/django-templatesyntaxerror-staticfiles-is-not-a-registered-tag-library
+        => just modify the top of your index.html
+
+5. Some rumor about the attribute "rel" of <link>:
+
+    => Some comment might suggest you remove the attribute "rel" of <link> from your commands. 
+        Although the error will be solved, the templates won't be imported.

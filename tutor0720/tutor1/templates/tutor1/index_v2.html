@@ -1,0 +1,353 @@
+<!-- for django to link css file -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.101.0">
+        <title>Homework Demonstration</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/heroes/">
+    
+        <link href="{% static 'tutor1/Headers_Bootstrap_v5_2_files/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="{% static 'tutor1/Headers_Bootstrap_v5_2_files/iir_icon.svg' %}" sizes="16x16" type="image/svg">
+        <link rel="manifest" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+        <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon.ico">
+        <meta name="theme-color" content="#712cf9">
+
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+
+            .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
+
+            .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+            }
+
+            .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+            }
+
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+        </style>
+
+        <!-- Custom styles for this template -->
+    
+        <link href="{% static 'tutor1/Headers_Bootstrap_v5_2_files/headers.css' %}" rel="stylesheet">
+        <link href="{% static 'tutor1/Heroes_Bootstrap_v5_2_files/heroes.css' %}" rel="stylesheet">
+    </head>
+<body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- format of attribute "viewBox":
+    => ( pos_col, pos_row, width( num_col ), height( num_row ) )
+    => the center of pos ( 0, 0 ) is the top-left point of designated space.
+    => up and left are positive, down and right are negative.
+  -->
+
+  <!-- format of label <path>:
+    => draw a SVG ( vector-based picture ) image.
+      => scalable.
+
+    => Mx y: starting point.
+   
+    => Arx ry x-axis-rotation large-arc-flag sweep-flag x y:
+    => basically draw a curve ( that is a part of an oval )
+      => rx ry: radius of x-axis and y-axis
+      => x-axis-rotation: rotation angle of curve and x-axis
+      => large-arc-flag: 0: minimum angle curve, 1: maximum angle curve
+      => sweep-flag: 0: counter clock-wise, 1: clock-wise
+      => x y: ending point of curve
+    
+    => vy:
+    => draw a vertical line to y
+      => x remains the same of previous x-coor
+    
+    for more document of <path>, please visit: 
+      => https://www.oxxostudio.tw/articles/201406/svg-04-path-1.html
+      => https://www.oxxostudio.tw/articles/201406/svg-05-path-2.html
+  -->
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+    </symbol>
+    <symbol id="home" viewBox="0 0 16 16">
+        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+    </symbol>
+    <symbol id="speedometer2" viewBox="0 0 16 16">
+        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"></path>
+        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"></path>
+    </symbol>
+    <symbol id="table" viewBox="0 0 16 16">
+        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"></path>
+    </symbol>
+    <symbol id="people-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+    </symbol>
+    <symbol id="grid" viewBox="0 0 16 16">
+        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path>
+    </symbol>
+</svg>
+
+<main>
+    <h1 class="visually-hidden">Headers examples</h1>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <!-- the hyperlink linked to the icon -->
+            <a href="/tutor1/analysis/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <!-- the jpeg can't just use svg to upload and resize -->
+                <!-- I guess only svg picture can do it. -->
+                <!-- the usage of href in svg is similar to ordinary <link> or other html labels. -->
+                <svg class="bi me-2" width="40" height="32">
+                <!--<use xlink:href="#bootstrap"></use>-->
+          
+                <!-- how to use a local svg file ? 
+                    => ref: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web
+                    => simply just follow the instruction in the link.
+                    => svg file can be upload with ordinary <img> label.
+                    => make sure the import link is correct( due to django development issue )
+                    => for further information about this issue, please take a look to DBMS/tutorial_for_static_file.txt
+                -->
+
+                <!-- a scalability issue about height & width:
+                    => In label <svg>:
+                        => It controls the size of "canvas", which affects the entire layout of the page.
+                    => In label <img>:
+                        => It controls the size of "svg image", which can also affect the layout if the size exceeds the canvas boundary.
+                    => It is recommended that your svg image size should not exceed the boundary of canvas setting in order to maintain the layout of the page.
+                -->
+                    <img
+                        src="{% static 'tutor1/Headers_Bootstrap_v5_2_files/iir_icon.svg' %}"
+                        alt="iir_icon.svg failed to be load"
+                        height="32"
+                        width="40"/>
+                </svg>
+                <span class="fs-4">Homework Demonstration</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/tutor1/analysis" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="similarity/1/{{ next }}" class="nav-link">Template Matching</a></li>
+                <li class="nav-item"><a href="https://drive.google.com/file/d/1sqIxqS7WDDo1BzN6VOKSH6z_-PYts9JY/view?usp=sharing" class="nav-link">NLP</a></li>
+                <li class="nav-item"><a href="https://colab.research.google.com/drive/1kVyKmEMpQA8iNIBq8ci2GV9cRdcwJM8s?usp=sharing" class="nav-link">Statistic</a></li>
+                <li class="nav-item"><a href="{% static 'tutor1/Album_example_Bootstrap_v5_2.html' %}" class="nav-link">Rating</a></li>
+                <li class="nav-item"><a href="https://colab.research.google.com/drive/1zSfG0tezfgq7oOSIHS0P1B8SThscDpzM?usp=sharing" class="nav-link">Unet</a></li>
+            </ul>
+        </header>
+    </div>
+    
+    <div class="b-example-divider"></div>
+    <!-- header bar of website ends here. -->
+
+    <!-- body of website starts from here. -->
+    <!-- template matching part starts here. -->
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="{% static 'tutor1/Headers_Bootstrap_v5_2_files/iir_icon.svg' %}" alt="" width="72" height="57">
+        <h1 class="display-5 fw-bold">Template Matching</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">This is the demonstration of template matching. Choose a picture first, and the program will find out every digit candidate in the chosen picture. Click the bottom below for further display.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="similarity/1/{{ next }}" >
+                    <!-- current base: tutor1
+                            => in the domain of current APP
+                    -->     
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">View results</button>
+                </a>
+                <!--<button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>-->
+            </div>
+        </div>
+    </div>
+    <!-- template matching part ends here. -->
+    <div class="b-example-divider"></div>
+    <!-- NLP part starts here. -->
+    <div class="px-4 pt-5 my-5 text-center">
+        <h1 class="display-4 fw-bold">NLP mission</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">With a given text dataset, the mission was to design a classifier to find the program language that each text belonged to. The homework used both BOW and TFIDF approaches to achieve the goal, and I also made a comparison between these two approaches. Click the button below to see further display.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <a href="https://drive.google.com/file/d/1sqIxqS7WDDo1BzN6VOKSH6z_-PYts9JY/view?usp=sharing" >
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Go To Google Colab</button>
+                </a>
+            </div>
+            <!--
+            <form class="p-4 p-md-5 border rounded-3 bg-light" action="/tutor1/analysis/" method="POST">
+                {% csrf_token %} 
+                <div class="form-floating mb-3">
+                    <input type="hidden" name="FormType" value="NLPForm">
+                    <input type="text" class="form-control" id="input_sentence" name="InputSentence" placeholder="input sentence">
+                    <label for="input_sentence">Let us have a quick try.</label>
+                </div>
+                <button class="w-30 btn btn-lg btn-primary" type="submit">Submit</button>
+                <hr class="my-4">
+            </form>
+            -->
+        </div>
+        
+        
+    </div>
+    <!-- NLP part ends here. -->
+    <div class="b-example-divider"></div>
+    <!-- statistics part starts here. -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'tutor1/Heroes_Bootstrap_v5_2_files/statistic001.png' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Statistic Demonstration</h1>
+                <p class="lead">This is the demonstration of statistic exercise. I applied serveral different statistic metrics to different hypothesis on the given dataset. Click the button below and go to my google colab for further display.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="https://colab.research.google.com/drive/1kVyKmEMpQA8iNIBq8ci2GV9cRdcwJM8s?usp=sharing">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Google Colab</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- statistics part ends here. -->
+    <!-- movie rating database demo starts here. -->
+    <div class="b-example-divider"></div>
+    <!-- 'p' stands for 'padding'
+        => px: padding x-axis
+        => py: padding y-axis
+        
+        => the size of padding is decided by the posfix number.
+
+        => ref: https://getbootstrap.com/docs/4.2/utilities/spacing/
+    -->
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 mb-3">Let's rate your favorite movie !</h1>
+                <p class="col-lg-10 fs-4">This is the demonstration of HTTP method and database manipulation. Enter your userID and a movie with your evaluation to it. Your evaluation will be displayed with other user's comment.</p>
+                <a href="movies/" >          
+                    <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">See every rating</button>
+                </a>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light" action="/tutor1/analysis/" method="POST">
+                    {% csrf_token %} <!-- This line is essential for avoiding token error -->
+                    <input type="hidden" name="FormType" value="MovieRatingForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingID" name="UserID" placeholder="user ID">
+                        <label for="floatingID">user ID</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingAge" name="Age" placeholder="age">
+                        <label for="floatingAge">your age</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingMovieName" name="MovieName" placeholder="movie name">
+                        <label for="floatingMovieName">movie name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingScore"  name="Score" placeholder="score">
+                        <label for="floatingScore">your score</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+                    <hr class="my-4">
+                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- movie rating database demo ends here. -->
+
+    <div class="b-example-divider"></div>
+    
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Spine segmentation mission with Unet</h1>
+                <p class="lead">In order to exceed the original baseline ( 0.71 ), I add additional layers to increase the ability to extract feature. Besides more layers, I also add a post-process based on image processing, which can roughly remove the noice ( false recognized area ). However, this process usually can't led to a higher average Dice score because some dispersed positive area might be incorrectly recognized as noice, which makes it be removed and thus results in a lower score. Click the button below for further display.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                    <a href="https://colab.research.google.com/drive/1zSfG0tezfgq7oOSIHS0P1B8SThscDpzM?usp=sharing" >          
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Google Colab</button>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-lg-3" src="{% static 'tutor1/Album_example_Bootstrap_v5_2_files/True_Unet_MRI_deco.png' %}" alt="" width="720">
+            </div>
+        </div>
+    </div>
+    
+    <div class="b-example-divider"></div>
+    
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">Demo Ends Here</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4"></p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="#">
+                    <button type="button" class="float-end btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Back To Top</button>
+                    </a>
+                    <!--
+                    <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="b-example-divider mb-0"></div>
+
+</main>
+
+    <script src="{% static 'tutor1/Headers_Bootstrap_v5_2_files/bootstrap.bundle.min.js' %}" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="{% static 'tutor1/Heroes_Bootstrap_v5_2_files/bootstrap.bundle.min.js' %}" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body></html>
